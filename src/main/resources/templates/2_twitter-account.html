@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V04</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="https://colorlib.com/etc/tb/Table_Fixed_Header/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/css/util.css">
+	<link rel="stylesheet" type="text/css" href="https://colorlib.com/etc/tb/Table_Fixed_Header/css/main.css">
+	<script src="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/bootstrap/js/popper.js"></script>
+	<script src="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/select2/select2.min.js"></script>
+	<script src="https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"683d672c79865227","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.8.1","si":10}'></script>
+	<meta name="robots" content="noindex, follow">
+	<script src="/myScript.js"></script>
+
+	<style>
+		.mydiv{
+			text-align:center !important;
+			padding-top:20px !important;
+			padding-bottom:0px !important;
+		}
+
+		.myinput{
+			display:inline !important;
+			background-color : #d1d1d1 !important;
+		}
+
+		.mylabel{
+			display:inline !important;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="mydiv">
+	tickers: <label for="tickers"></label><input class="myinput" id="tickers"/>
+
+	<div id="Date_box" style="display:inline;">
+		<label for="fromDate">fromDate: </label><input class="myinput" type="date" id="fromDate"
+													   min="2010-01-01" max="2020-12-31">
+		<label for="toDate">fromDate: </label><input class="myinput" type="date" id="toDate"
+													   min="2010-01-01" max="2020-12-31"><br>
+	</div>
+
+	<input class="myinput" type="radio" id="default" name="view" value="default">
+	<label class="mylabel" for="default">default view</label> &nbsp;
+
+	<input class="myinput" type="radio" id="high_low" name="view" value="high_low">
+	<label for="high_low">high low view</label> &nbsp;
+
+	<input class="myinput" type="radio" id="open_close" name="view" value="open_close">
+	<label for="open_close">open close view</label> &nbsp;
+
+	<input class="myinput" type="radio" id="top" name="view" value="top">
+	<label for="open_close">top</label> &nbsp;
+
+	<input class="myinput" type="radio" id="tail" name="view" value="tail">
+	<label for="open_close">tail</label> &nbsp;<br>
+
+	<button id="login_button" class="btn btn-primary">Go!</button>
+</div>
+<div id="display-area">
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
