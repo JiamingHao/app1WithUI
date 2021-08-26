@@ -1,13 +1,13 @@
 version: '3.5'
 services:
-  mysql:
-    container_name: app1_mysql
+  mysql2.0:
+    container_name: app1_mysql2.0
     
     build:
       context: .
-      dockerfile: Dockerfile-mysql
+      dockerfile: Dockerfile-mysql2.0
     
-    image: emps/mysql:latest
+    image: emps/mysql2.0:latest
     
     restart: on-failure
     
@@ -16,18 +16,18 @@ services:
       #command: --explicit_defaults_for_timestamp
 
   app:
-    container_name: app1_app
+    container_name: app1_app2.0
     
     restart: on-failure
     
     build:
       context: .
-      dockerfile: Dockerfile-app
+      dockerfile: Dockerfile-app2.0
     
-    image: emps/app:latest
+    image: emps/app2.0:latest
     
     ports:
-      - "8081:8081"
+      - "8082:8082"
     
     links:
       - mysql:mysql
