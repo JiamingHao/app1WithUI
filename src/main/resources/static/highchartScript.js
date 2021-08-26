@@ -93,3 +93,77 @@ function drawChart (data) {
         }]
     });
 }
+
+
+function drawOpenCloseChart (data) {
+    // Create the chart
+
+    console.log(data)
+
+    // split the data set into ohlc and volume
+    var ohlc = [], dataLength = data.length, ticker
+
+    for (var i=0; i < dataLength; i += 1) {
+
+        ohlc.push([
+            new Date(data[i]['date']).getTime(), // the date
+            data[i]['close'] // close
+        ]);
+    }
+
+    Highcharts.stockChart('chart_container', {
+
+        rangeSelector: {
+            selected: 1
+        },
+
+        title: {
+            text: ticker + ' Stock Price'
+        },
+
+        series: [{
+            name: ticker,
+            data: ohlc,
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+    });
+}
+
+
+function drawHighLowChart (data) {
+    // Create the chart
+
+    console.log(data)
+
+    // split the data set into ohlc and volume
+    var ohlc = [], dataLength = data.length, ticker
+
+    for (var i=0; i < dataLength; i += 1) {
+
+        ohlc.push([
+            new Date(data[i]['date']).getTime(), // the date
+            data[i]['high'] // high
+        ]);
+    }
+
+    Highcharts.stockChart('chart_container', {
+
+        rangeSelector: {
+            selected: 1
+        },
+
+        title: {
+            text: ticker + ' Stock Price'
+        },
+
+        series: [{
+            name: ticker,
+            data: ohlc,
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+    });
+}

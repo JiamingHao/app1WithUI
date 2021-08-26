@@ -100,7 +100,7 @@
 			$("#display-area").empty();
 
 			console.log(result[0]['id']['ticker']);
-			var limiter = $("<div class='limiter'>");
+			var limiter = $("<div style=\"width:90%;\" class='limiter'>");
 			var container_table100 = $("<div class='container-table100'>");
 			var wrap_table100 = $("<div class='wrap-table100'>");
 
@@ -176,7 +176,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					highLowProjection(result);
-					drawChart(result);
+					drawHighLowChart(result);
 				},
 				error: function(request, status, error){
 					console.log("Error");
@@ -216,7 +216,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					openCloseProjection(result);
-
+					drawOpenCloseChart(result);
 				},
 				error: function(request, status, error){
 					console.log("Error");
@@ -353,6 +353,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					fullProjection(result);
+					drawChart(result);
 				},
 				error: function(request, status, error){
 					console.log("Error");
