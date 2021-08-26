@@ -23,6 +23,18 @@
 	<meta name="robots" content="noindex, follow">
 	<script src="/myScript.js"></script>
 
+	<!--	highcharts-->
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+	<script src="/highchartScript.js"></script>
+
+	<link rel="stylesheet" href="/header.component.css"/>
+
+
+
+
 	<style>
 		.mydiv{
 			text-align:center !important;
@@ -40,40 +52,100 @@
 		}
 	</style>
 
+
+
+
 </head>
 <body>
-
-<div class="mydiv">
-	tickers: <label for="tickers"></label><input class="myinput" id="tickers"/>
-
-	<div id="Date_box" style="display:inline;">
-		<label for="fromDate">fromDate: </label><input class="myinput" type="date" id="fromDate"
-													   min="2010-01-01" max="2020-12-31">
-		<label for="toDate">fromDate: </label><input class="myinput" type="date" id="toDate"
-													   min="2010-01-01" max="2020-12-31"><br>
+<div id="outer_wrap">
+	<div id="head_container">
+		<div id="head_top">
+			<img src="/citilogoredesign.png">
+		</div>
+		<div id="head_bottom">
+			<nav id="main_nav">
+				<ul>
+					<li>
+						<div class="nav_button">
+							<a href="#">Introduction</a>
+						</div>
+						<div class="dropdown_content">
+							<a href="history.html">Our History</a>
+							<a href="location.html">Our Location</a>
+							<a href="gallery.html">Volcano BBQ</a>
+							<a href="gallery.html">Accommodation</a>
+							<a href="gallery.html">Other Facilities</a>
+						</div>
+					</li>
+					<li>
+						<div class="nav_button">
+							<a href="#">Documents</a>
+						</div>
+					</li>
+					<li>
+						<div class="nav_button">
+							<a href="#">Demo</a>
+						</div>
+						<div class="dropdown_content">
+							<a href="Past Events.html">Past Events</a>
+							<a href="Past Events.html">Upcoming</a>
+							<a href="mailto: services.volcano_bbq@volcano.com">Your Ideas</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
-
-	<input class="myinput" type="radio" id="default" name="view" value="default">
-	<label class="mylabel" for="default">default view</label> &nbsp;
-
-	<input class="myinput" type="radio" id="high_low" name="view" value="high_low">
-	<label for="high_low">high low view</label> &nbsp;
-
-	<input class="myinput" type="radio" id="open_close" name="view" value="open_close">
-	<label for="open_close">open close view</label> &nbsp;
-
-	<input class="myinput" type="radio" id="top" name="view" value="top">
-	<label for="open_close">top</label> &nbsp;
-
-	<input class="myinput" type="radio" id="tail" name="view" value="tail">
-	<label for="open_close">tail</label> &nbsp;<br>
-
-	<button id="login_button" class="btn btn-primary">Go!</button>
 </div>
+
+<div id="filter_chart_wrap">
+	<div class="mydiv row">
+		tickers: <label for="tickers"></label><input class="myinput" id="tickers"/>
+
+		<div id="Date_box" style="display:inline;">
+			<label for="fromDate">fromDate: </label><input class="myinput" type="date" id="fromDate"
+														   min="2010-01-01" max="2020-12-31">
+			<label for="toDate">fromDate: </label><input class="myinput" type="date" id="toDate"
+														 min="2010-01-01" max="2020-12-31"><br>
+		</div>
+
+		<input class="myinput" type="radio" id="default" name="view" value="default">
+		<label class="mylabel" for="default">default view</label> &nbsp;
+
+		<input class="myinput" type="radio" id="high_low" name="view" value="high_low">
+		<label for="high_low">high low view</label> &nbsp;
+
+		<input class="myinput" type="radio" id="open_close" name="view" value="open_close">
+		<label for="open_close">open close view</label> &nbsp;
+
+		<input class="myinput" type="radio" id="top" name="view" value="top">
+		<label for="open_close">top</label> &nbsp;
+
+		<input class="myinput" type="radio" id="tail" name="view" value="tail">
+		<label for="open_close">tail</label> &nbsp;<br>
+
+		<button id="login_button" class="btn btn-primary">Go!</button>
+	</div>
+	<div id="chart_container" class="row" style="height: 400px; min-width: 310px"></div>
+</div>
+
+
+
+
+
+
+<p>chart</p>
+
+
+
+
+
+
 <div id="display-area">
 
 
-</div>
+</div>s
+
 
 
 
@@ -81,4 +153,6 @@
 
 
 </body>
+
+
 </html>

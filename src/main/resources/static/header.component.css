@@ -1,0 +1,106 @@
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+
+#head_top {
+    background-color: white;
+    margin: 0;
+    border: 0;
+}
+
+#head_bottom {
+    background-color: #002D72;
+}
+
+.nav_button a {
+    color: white;
+    text-decoration: none;
+}
+
+#main_nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+
+}
+
+
+.nav_button a{
+    list-style-type: none;
+    display: inline-block;
+    align-items: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.nav_button :hover {
+    background-color: #056CAD;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+.dropdown_content {
+    min-width: 300px;
+    text-align: left;
+    display: none;
+    background: white;
+    position: absolute;
+}
+
+
+.dropdown_content a {
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown_content a{
+    color: grey;
+}
+
+
+#main_nav ul :hover .dropdown_content {
+    color: black;
+    display: block;
+}
+
+
+@media screen and (min-width:1200px) {
+    #filter_chart_wrap {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #filter_chart_wrap .row {
+        margin-top: 5px;
+        width: 45%;
+        display: inline-block;
+        min-height: 200px;
+        border: 0.1px solid #000;
+    }
+}
+
+/* 屏幕宽度小于等于1200px时  */
+@media (max-width:1200px) {
+    #filter_chart_wrap {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #filter_chart_wrap .row {
+        margin-top: 5px;
+        width: 100%;
+        display: inline-block;
+        min-height: 200px;
+        border: 1px solid #000;
+
+    }
+}
