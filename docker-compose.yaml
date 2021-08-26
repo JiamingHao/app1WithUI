@@ -30,11 +30,11 @@ services:
       - "8082:8082"
     
     links:
-      - mysql:mysql
+      - mysql2.0:mysql2.0
     
     environment:
-        SPRING_DATASOUTCE_URL: jdbc:mysql://mysql:3306/market_data?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
+        SPRING_DATASOUTCE_URL: jdbc:mysql2.0://mysql2.0:3306/market_data?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
     
     depends_on:
-      - mysql
+      - mysql2.0
 
