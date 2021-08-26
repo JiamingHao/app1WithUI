@@ -27,12 +27,12 @@ pipeline {
             
                 //Do the cleaning up before restarting the containers
                 sh 'docker-compose down'
-                sh 'docker stop app1_app || true && docker rm app1_app || true'
-                sh 'docker stop app1_mysql || true && docker rm app1_mysql || true'
+                sh 'docker stop app1_app2.0 || true && docker rm app1_app2.0 || true'
+                sh 'docker stop app1_mysql2.0 || true && docker rm app1_mysql2.0 || true'
                 
                 //rebuild images in case of there might some changes
-                sh 'docker build -f Dockerfile-app -t emps/app .'
-                sh 'docker build -f Dockerfile-mysql -t emps/mysql .'
+                sh 'docker build -f Dockerfile-app2.0 -t emps/app2.0 .'
+                sh 'docker build -f Dockerfile-mysql2.0 -t emps/mysql2.0 .'
                 
                 //Restart the containers
                 sh 'docker-compose up -d'
