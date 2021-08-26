@@ -17,6 +17,7 @@ function drawChart (data) {
         i = 0;
 
     for (i; i < dataLength; i += 1) {
+        var ticker = data[i]["id"]['ticker']
 
         ohlc.push([
             new Date(data[i]['id']['date']).getTime(), // the date
@@ -41,7 +42,7 @@ function drawChart (data) {
         },
 
         title: {
-            text: 'AAPL Historical'
+            text: ticker
         },
 
         yAxis: [{
@@ -77,7 +78,7 @@ function drawChart (data) {
 
         series: [{
             type: 'candlestick',
-            name: 'AAPL',
+            name: ticker,
             data: ohlc,
             dataGrouping: {
                 units: groupingUnits
