@@ -27,7 +27,7 @@ services:
     image: emps/app2.0:latest
     
     ports:
-      - "9000:9000"
+      - "8081:8081"
     
     links:
       - mysql2.0:mysql2.0
