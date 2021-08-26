@@ -1,13 +1,14 @@
+  
 version: '3.5'
 services:
-  mysql2.0:
-    container_name: app1_mysql2.0
+  mysql:
+    container_name: app1_mysql
     
     build:
       context: .
-      dockerfile: Dockerfile-mysql2.0
+      dockerfile: Dockerfile-mysql
     
-    image: emps/mysql2.0:latest
+    image: emps/mysql:latest
     
     restart: on-failure
     
@@ -15,26 +16,25 @@ services:
       MYSQL_ROOT_PASSWORD: c0nygre
       #command: --explicit_defaults_for_timestamp
 
-  app2.0:
-    container_name: app1_app2.0
+  app:
+    container_name: app1_app
     
     restart: on-failure
     
     build:
       context: .
-      dockerfile: Dockerfile-app2.0
+      dockerfile: Dockerfile-app
     
-    image: emps/app2.0:latest
+    image: emps/app:latest
     
     ports:
       - "8081:8081"
     
     links:
-      - mysql2.0:mysql2.0
+      - mysql:mysql
     
     environment:
-        SPRING_DATASOUTCE_URL: jdbc:mysql2.0://mysql2.0:3306/market_data?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
+        SPRING_DATASOUTCE_URL: jdbc:mysql://mysql:3306/market_data?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
     
     depends_on:
-      - mysql2.0
-
+      - mysql
