@@ -176,6 +176,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					highLowProjection(result);
+					drawChart(result);
 				},
 				error: function(request, status, error){
 					console.log("Error");
@@ -215,6 +216,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					openCloseProjection(result);
+
 				},
 				error: function(request, status, error){
 					console.log("Error");
@@ -273,6 +275,7 @@
 					console.log("Success return!");
 					console.log(result[0]);
 					fullProjection(result);
+					drawChart(result);
 				},
 				error: function(request, status, error){
 					console.log("Error");
