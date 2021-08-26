@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+       
+        
+        stage('Compiling Stage'){
+            agent { docker 'maven:3.8.2' }
+            steps{
+                sh 'mvn clean compile'
+            }
+        
+        }
+        
+        stage ('Testing Stage') {
+            agent { docker 'maven:3.8.2' }
+            steps {
+                   sh 'mvn test'
+            }
+        }
+        
+        stage('Deploying Stage'){
+            agent any
+            steps{
+                sh 'chmod +x ./mvnw'
+                sh './mvnw package'
+            
+                //Do the cleaning up before restarting the containers
+                sh 'docker-compose down'
+                sh 'docker stop app1_app2.0 || true && docker rm app1_app2.0 || true'
+                sh 'docker stop app1_mysql2.0 || true && docker rm app1_mysql2.0 || true'
+                
+                //rebuild images in case of there might some changes
+                sh 'docker build -f Dockerfile-app2.0 -t emps/app2.0 .'
+                sh 'docker build -f Dockerfile-mysql2.0 -t emps/mysql2.0 .'
+                
+                //Restart the containers
+                sh 'docker-compose up -d'
+            }
+        }
+
+
+    }
+}

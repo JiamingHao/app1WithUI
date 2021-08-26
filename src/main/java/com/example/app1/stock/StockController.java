@@ -9,6 +9,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin
 @Validated
 @RequestMapping(path="api/v1.0/quote")
 public class StockController {
