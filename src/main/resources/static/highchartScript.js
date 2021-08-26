@@ -105,7 +105,7 @@ function drawOpenCloseChart (data) {
     var ohlc = [], dataLength = data.length, ticker
 
     for (var i=0; i < dataLength; i += 1) {
-
+        ticker = data[i]['ticker']
         ohlc.push([
             new Date(data[i]['date']).getTime(), // the date
             data[i]['close'] // close
@@ -139,10 +139,11 @@ function drawHighLowChart (data) {
     console.log(data)
 
     // split the data set into ohlc and volume
-    var ohlc = [], dataLength = data.length, ticker
+    var ohlc = [], dataLength = data.length
+    var ticker
 
     for (var i=0; i < dataLength; i += 1) {
-
+        ticker = data[i]['ticker']
         ohlc.push([
             new Date(data[i]['date']).getTime(), // the date
             data[i]['high'] // high
